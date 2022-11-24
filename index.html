@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="/css/styles.css" />
+
+		<title>Clase 15 Ejercicio 2</title>
+	</head>
+	<body class="container mt-3">
+		<main id="title" class="row">
+			<div class="col-lg-8">
+				<div class="bg-light border-light rounded py-2 px-4 container-fluid">
+					<h1 v-bind:style="{color: titleColor, fontSize: fontSize + 'rem'}">
+						{{titulo}}
+					</h1>
+					<p id="text-container">{{parrafo}}</p>
+				</div>
+				<div id="alertContainer" class="container-fluid px-0 d-none">
+					<div class="alert alert-primary h-25 my-2">
+						Tu texto se genero con exito! <span class="close-btn">X</span>
+					</div>
+				</div>
+			</div>
+			<div id="form" class="col-lg-4 p-3 rounded">
+				<h2>Menu edicion</h2>
+				<form action="">
+					<div class="mb-3">
+						<label class="form-label fw-bold" for="title" class="form-label"
+							>Titulo</label
+						>
+						<input
+							required
+							class="form-control"
+							type="text"
+							name="title"
+							v-model="titulo"
+							placeholder="Ingrese un Titulo"
+						/>
+					</div>
+					<div class="mb-3">
+						<label class="form-label fw-bold" for="paragraph">Parrafo</label>
+						<textarea
+							required
+							placeholder="Escribe aqui tu Parrafo"
+							class="form-control"
+							name="paragraph"
+							id="paragraph"
+							v-model="parrafo"
+							cols="30"
+							rows="10"
+						></textarea>
+					</div>
+					<div class="mb-3">
+						<label class="form-label fw-bold" for="titleSize"
+							>Tamaño del texto (rem)</label
+						>
+						<input
+							placeholder="Elije tamaño de tu Titulo"
+							class="form-control"
+							type="number"
+							name="titleSize"
+							id="titleSize"
+							v-model="fontSize"
+						/>
+					</div>
+					<div class="mb-3">
+						<fieldset>
+							<legend class="form-label fs-6 fw-bold">Seleccionar Color</legend>
+							<div class="form-check">
+								<input
+									type="radio"
+									name="colorSelector"
+									id="redColor"
+									value="red"
+									v-model="titleColor"
+									checked
+								/>
+								<label for="redColor">Rojo</label>
+							</div>
+							<div class="form-check">
+								<input
+									type="radio"
+									name="colorSelector"
+									id="greenColor"
+									value="green"
+									v-model="titleColor"
+								/>
+								<label for="greenColor">Verde</label>
+							</div>
+
+							<div class="form-check">
+								<input
+									type="radio"
+									name="colorSelector"
+									id="blueColor"
+									value="blue"
+									v-model="titleColor"
+								/>
+								<label for="blueColor">Azul</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class="d-grid mb-2">
+						<button id="saveButton" type="button" class="btn btn-success">
+							Guardar
+						</button>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+		<script src="/js/main.js"></script>
+	</body>
+</html>
